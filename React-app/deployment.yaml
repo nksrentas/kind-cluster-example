@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hw-app
+  name: hw-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: hw-app
+    spec:
+      containers:
+        - image: localhost:5000/hw
+          name: hw
+          ports:
+            - containerPort: 3000
+          resources: {}
+status: {}
